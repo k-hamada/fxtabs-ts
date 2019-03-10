@@ -8,10 +8,11 @@ import fs from 'fs'
 import util from 'util'
 const readFile = util.promisify(fs.readFile)
 const writeFile = util.promisify(fs.writeFile)
+const realpath = util.promisify(fs.realpath)
 
-async function main() {
-  const inputPath = './recovery.jsonlz4'
+async function main(pathname: string) {
   try {
+    const inputPath = await realpath(pathname)
     const compressed = await readFile(inputPath)
     const content = mozlz4a.decompress(compressed)
     const json = JSON.parse(content.toString('UTF-8'))
@@ -28,4 +29,10 @@ async function main() {
   }
 }
 
-main()
+const pathname = process.argv[2]
+if (pathname) {
+  main(pathname)
+}
+else {
+  console.error(`Error: pathname=${pathname}`)
+}
