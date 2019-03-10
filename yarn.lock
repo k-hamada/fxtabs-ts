@@ -59,10 +59,22 @@ loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lz4js@>=0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/lz4js/-/lz4js-0.2.0.tgz#09f1a397cb2158f675146c3351dde85058cb322f"
+  integrity sha1-CfGjl8shWPZ1FGwzUd3oUFjLMi8=
+
 make-error@^1.1.1:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.5.tgz#efe4e81f6db28cadd605c70f29c831b58ef776c8"
   integrity sha512-c3sIjNUow0+8swNwVpqoH4YCShKNFkMaw6oH1mNS2haDZQqkeZFlHS3dhoeEbKKmJB4vXpJucU6oH75aDYeE9g==
+
+mozlz4a@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/mozlz4a/-/mozlz4a-1.1.0.tgz#37b154241320fc346d2f0c38d59c26cdb578b67d"
+  integrity sha1-N7FUJBMg/DRtLww41ZwmzbV4tn0=
+  dependencies:
+    lz4js ">=0.2.0"
 
 object-assign@^4.1.1:
   version "4.1.1"
