@@ -1,4 +1,4 @@
-export default (element: any) => (`
+export default (element: any) => `
 <html>
     <head>
         <title>Fx tabs</title>
@@ -16,4 +16,4 @@ export default (element: any) => (`
     ${element}
     </body>
 </html>
-`)
+`
