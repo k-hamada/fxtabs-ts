@@ -29,7 +29,7 @@ async function main(pathname: string) {
 
     console.log(`output`)
     const list = ReactDOMServer.renderToString(List(tabContainer))
-    const lastUpdate = json.session.lastUpdate || Date.now();
+    const lastUpdate = json.session.lastUpdate || Date.now()
     const outputPath = `./fxtabs_${lastUpdate}.html`
 
     console.log(`write: ${outputPath}`)
@@ -44,7 +44,6 @@ async function main(pathname: string) {
 const pathname = process.argv[2]
 if (pathname) {
   main(pathname)
-}
-else {
+} else {
   console.error(`Error: pathname=${pathname}`)
 }
