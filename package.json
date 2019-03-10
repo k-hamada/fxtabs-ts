@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx ts-node ./src/fxtabs.tsx",
-    "fmt": "prettier --write src/**/*.tsx"
+    "build": "tsc",
+    "fmt": "prettier --write src/**/*.tsx",
+    "export": "node dist/fxtabs.js",
+    "all": "npm-run-all build \"export -- {1}\" --"
   },
   "prettier": {
     "singleQuote": true,
@@ -24,6 +26,7 @@
     "@types/node": "^11.11.0",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
+    "npm-run-all": "^4.1.5",
     "prettier": "1.16.4",
     "ts-node": "^8.0.3"
   }
