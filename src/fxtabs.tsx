@@ -11,7 +11,6 @@ const writeFile = util.promisify(fs.writeFile)
 
 async function main() {
   const inputPath = './recovery.jsonlz4'
-  const outputPath = `./fxtabs_${Date.now()}.html`
   try {
     const compressed = await readFile(inputPath)
     const content = mozlz4a.decompress(compressed)
@@ -19,12 +18,14 @@ async function main() {
     const tabs = json.windows[0].tabs
     const tabContainer = new TabContainer(tabs)
     const list = ReactDOMServer.renderToString(List(tabContainer))
+    const lastUpdate = json.session.lastUpdate || Date.now();
+    const outputPath = `./fxtabs_${lastUpdate}.html`
     await writeFile(outputPath, Template(list))
+    console.log(`success: ${outputPath}`)
   } catch (err) {
     console.error(err)
     return
   }
-  console.log(`success: ${outputPath}`)
 }
 
 main()
