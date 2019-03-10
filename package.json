@@ -4,7 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npx ts-node ./src/fxtabs.tsx"
+    "build": "npx ts-node ./src/fxtabs.tsx",
+    "fmt": "prettier --write src/**/*.tsx"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   },
   "keywords": [],
   "author": "",
@@ -18,6 +23,7 @@
     "@types/node": "^11.11.0",
     "@types/react": "^16.8.7",
     "@types/react-dom": "^16.8.2",
+    "prettier": "1.16.4",
     "ts-node": "^8.0.3"
   }
 }
