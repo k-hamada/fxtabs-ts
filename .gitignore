@@ -107,3 +107,10 @@ typings/
 
 # DynamoDB Local files
 .dynamodb/
+
+
+## Add
+
+dist
+fxtabs_*.html
+*.jsonlz4
